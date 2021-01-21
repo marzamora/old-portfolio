@@ -1,0 +1,27 @@
+@import '../scss/shared.scss';
+
+.showcase {
+    height: 100vh;
+    background-color: $dark;
+    color: $dark;
+    text-align: center;
+
+    h1 {
+        color: $light;
+        padding: .8rem 0rem;
+        font-family: $quattrocento-sans-font-stack;
+        text-decoration: capitalize;
+    }
+
+    
+}
+
+.showcase-container {       
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.showcase-img {
+    min-width: 400px;;
+}
