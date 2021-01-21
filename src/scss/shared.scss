@@ -1,0 +1,17 @@
+@import
+    '_colors.scss',
+    '_fonts.scss',
+    '_normalize.scss',
+    '_responsive_mixins.scss',
+    '_typography.scss',
+    '_variables.scss';
+
+/**
+ * Enable smooth scrolling on the whole document
+ */
+ html {
+	scroll-behavior: smooth;
+}
+
+    
+@import "~bootstrap/scss/bootstrap";
