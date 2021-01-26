@@ -3,6 +3,7 @@ import './Hero.scss';
 import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Hero = () => {
     const [copied, setCopied] = useState(false);
@@ -15,18 +16,11 @@ const Hero = () => {
             setTipMsg('Succesfully copied to clipboard!');
             setCopied(true);
         } else {
-            setTipMsg(`${window.isSecureContext}`);
-            console.log("Err") ;
+            setTipMsg(`Is secure context: ${window.isSecureContext}`);
         }
     }
 
-    const renderTooltip = (
-        <Tooltip>
-            {tipMsg}
-        </Tooltip>
-    );
-    
-    const renderTooltipErr = (
+    const renderTooltipMsg = (
         <Tooltip>
             {tipMsg}
         </Tooltip>
@@ -38,7 +32,7 @@ const Hero = () => {
             trigger="hover"
             placement="bottom"
             delay={{ show: 250, hide: 300 }}
-            overlay={copied ? renderTooltip : renderTooltipErr}
+            overlay={renderTooltipMsg}
         >
             <Button
             className="hero-btn"
@@ -50,19 +44,29 @@ const Hero = () => {
         </OverlayTrigger>
     );
 
+    const ChevrownDown = () => (
+        <div className="down-arrow-container">
+            <a href="#showcase">
+                <FontAwesomeIcon icon="chevron-down" size="2x"  className="bobbing"/>
+            </a>
+        </div>
+    );
+
     return(
-      <div className="hero">
-          <div className="hero-container">
-              <div>
-                <h5 className="hero-subtitle">Hi, I'm Marcello Zamora.</h5>
-                <h1 className="hero-title">
-                    Welcome to my portfolio.
-                </h1>
-                  <Button className="hero-btn" variant="outline-dark" href="#showcase">See my Work</Button> 
-                  <ContactMeButton>Get in Touch</ContactMeButton>
-              </div>
-          </div>
-      </div>
+        <div className="hero">
+            <div className="hero-container">
+                <div></div>
+                <div>
+                    <h5 className="hero-subtitle">Hi, I'm Marcello Zamora.</h5>
+                    <h1 className="hero-title">
+                        Welcome to my portfolio.
+                    </h1>
+                    <Button className="hero-btn" variant="outline-dark" href="#showcase">See my Work</Button> 
+                    <ContactMeButton>Get in Touch</ContactMeButton>
+                </div>
+                <ChevrownDown />
+            </div>
+        </div>
     );
 }
 

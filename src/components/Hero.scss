@@ -3,10 +3,12 @@
 .hero {
     // background: url('./images/Donut03.png') center center/cover no-repeat;
     background-color: seashell;
-    height: 94vh;
+    height: 100vh;
 
     color: black;
     text-align: center;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
 
     &-btn {
         margin-inline: .5rem;
@@ -16,9 +18,12 @@
 
 .hero-container {
     display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 100%;
+    margin-block: 0;
 }
 
 .hero-title {
@@ -35,4 +40,31 @@
 .hero-subtitle {
     font-family: $merriweather-font-stack;
     text-shadow: 1px 1px 2px rgba($color: #000000, $alpha: .5);
+}
+
+.down-arrow-container{
+    align-content: center;
+} 
+
+.down-arrow-container a {
+    color: gray;
+
+    &:focus {
+        color: black;
+    }
+}
+
+
+
+.bobbing {
+    animation-name: bobbing;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes bobbing {
+    0%   { transform: translate(0,  -2px); } 
+    50%  { transform: translate(0, 10px); } 
+    100% { transform: translate(0, -2px); }  
 }
