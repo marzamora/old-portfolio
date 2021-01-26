@@ -1,1 +1,11 @@
 @import '../scss/shared.scss';
+
+#navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    top: 0;
+    transition: top 0.4s;
+}

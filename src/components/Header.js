@@ -4,10 +4,30 @@ import Nav from 'react-bootstrap/Nav';
 import './Header.scss';
 
 class Header extends React.Component {
+    state = {
+        prevScrollPos: window.pageYOffset
+    }
+
+    componentDidMount () {
+        window.onscroll = () => {
+            let currentScrollPos = window.pageYOffset;
+            if (this.state.prevScrollPos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-25vh";
+            }
+            this.setState({
+                prevScrollPos: currentScrollPos
+            });
+        }
+    }
+    
+
+
     render() {
         return (
         <div className='header'>
-            <Navbar collapseOnSelect bg="dark" variant="dark" expand="sm">
+            <Navbar id="navbar" collapseOnSelect bg="dark" variant="dark" expand="sm">
                 <Navbar.Brand href="#home">MZ</Navbar.Brand>
                 <Navbar.Text>Full-Stack Developer</Navbar.Text>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
