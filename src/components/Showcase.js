@@ -6,7 +6,7 @@ import donut from './images/Donut03.png';
 function Showcase() {
     return (
         <div className="showcase" id="showcase">
-            <h1 className="mt-3">More Coming Soon.</h1>
+            <h1>More Coming Soon.</h1>
             <div className="showcase-container">
                 <Card style={{ width: '400px' }}>
                     <Card.Img variant="top" src={donut} className="showcase-img" />
